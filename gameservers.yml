@@ -1,0 +1,9 @@
+version: "3"
+services:
+  factorio:
+    image: dtandersen/factorio
+    ports:
+      - "27015:27015/tcp"
+      - "34197:34197/udp"
+    volumes:
+      - /services/games/factorio:/factorio

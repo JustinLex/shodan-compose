@@ -1,0 +1,37 @@
+version: "3"
+services:
+
+  samba:
+    image: dperson/samba
+    ports:
+      - "137-139"
+      - "445"
+    volumes:
+      - /mnt/storage:/mount
+    env_file: samba.env
+
+  home-assistant:
+    image: homeassistant/home-assistant
+    volumes:
+      - /services/home-assistant:/config
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      hostnet: {}
+
+  unifi:
+    image: goofball222/unifi
+    ports:
+      - "3478:3478/udp"
+      - "6789:6789"
+      - "8080:8080"
+      - "8443:8443"
+      - "8880:8880"
+      - "8843:8843"
+      - "10001:10001/udp"
+    volumes:
+      - /services/unifi:/usr/lib/unifi
+
+networks:
+  hostnet:
+    external: true
+    name: host
