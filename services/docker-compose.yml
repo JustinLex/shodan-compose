@@ -15,7 +15,7 @@ services:
     volumes:
       - /services/home-assistant:/config
       - /etc/localtime:/etc/localtime:ro
-    networks_mode: "host"
+    network_mode: "host"
 
   unifi:
     image: goofball222/unifi
