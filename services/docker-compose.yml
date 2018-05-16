@@ -15,8 +15,7 @@ services:
     volumes:
       - /services/home-assistant:/config
       - /etc/localtime:/etc/localtime:ro
-    networks:
-      hostnet: {}
+    networks_mode: "host"
 
   unifi:
     image: goofball222/unifi
@@ -30,8 +29,3 @@ services:
       - "10001:10001/udp"
     volumes:
       - /services/unifi:/usr/lib/unifi
-
-networks:
-  hostnet:
-    external: true
-    name: host
