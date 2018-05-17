@@ -18,7 +18,7 @@ services:
     network_mode: "host"
 
   unifi:
-    image: goofball222/unifi:release-5.6.37
+    image: goofball222/unifi
     network_mode: "host"
     ports:
       - "3478:3478/udp"
