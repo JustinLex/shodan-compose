@@ -32,3 +32,25 @@ services:
       - /services/unifi/cert:/usr/lib/unifi/cert
       - /services/unifi/data:/usr/lib/unifi/data
       - /services/unifi/logs:/usr/lib/unifi/logs
+
+  wikidb:
+    image: mongo
+    expose:
+      - '27017'
+    command: '--smallfiles --bind_ip wikidb'
+    environment:
+      - 'MONGO_LOG_DIR=/dev/null'
+    volumes:
+      - /services/wiki/mongo:/data/db
+  wikijs:
+    image: 'requarks/wiki:latest'
+    links:
+      - wikidb
+    depends_on:
+      - wikidb
+    ports:
+      - '80:3000'
+    environment:
+      WIKI_ADMIN_EMAIL: admin@example.com
+    volumes:
+      - /services/wiki/config.yml:/var/wiki/config.yml
