@@ -10,12 +10,12 @@ As of now, SHODAN runs 3 services and 1 gameserver.
 * Home-Assistant for home automation
 * Samba filesharing for Windows filesharing and Windows backups
 * Unifi AP controller for managing my Unifi access point (with more coming)
+* wiki.js for documentation (being transferred from gollum)
 
 ### Gameservers:
 * Factorio
 
 ### Services waiting to be implemented:
- * wiki.js - My old documentation wiki used gollum, but it's not very powerful, and doesn't have any Docker containers on Docker Hub. I'd rather not "maintain" my own Dockerfile or integrate it with docker-compose, and wiki.js seems to be the new, upcoming wiki package.
  * Emby - It has taken me 2 years to get around to implementing a media server on my home network...
  * Transmission with OpenVPN buddy container - Should be an obvious companion to emby.
  * automated offsite backup container - Still need to set up offsite backups...
