@@ -54,3 +54,4 @@ services:
       WIKI_ADMIN_EMAIL: admin@example.com
     volumes:
       - /services/wiki/config.yml:/var/wiki/config.yml
+      - /services/wiki/id_rsa:/var/wiki/id_rsa
