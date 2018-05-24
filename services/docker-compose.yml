@@ -8,7 +8,7 @@ services:
       - "445"
     volumes:
       - /mnt/storage:/mount
-    command: samba.sh -nS -u "justin;59nv7dfs83" -u "ayy-lmao;qpgtxu5me8" -s "files;/mount/files/;;no;no;all;justin,ayy-lmao" -s "ayy-lmao_backup;/mount/backups/current/ayy-lmao;;no;no;ayy-lmao;ayy-lmao" -w "WORKGROUP" -g "log level = 1"
+    command: -nS -u "justin;59nv7dfs83" -u "ayy-lmao;qpgtxu5me8" -s "files;/mount/files/;;no;no;all;justin,ayy-lmao" -s "ayy-lmao_backup;/mount/backups/current/ayy-lmao;;no;no;ayy-lmao;ayy-lmao" -w "WORKGROUP" -g "log level = 1"
 
   home-assistant:
     image: homeassistant/home-assistant
