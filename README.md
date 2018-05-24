@@ -9,6 +9,7 @@ As of now, SHODAN runs 3 services and 1 gameserver.
 ### Services:
 * Home-Assistant for home automation
 * Samba filesharing for Windows filesharing and Windows backups
+* sftp server for secure filesharing over the internet, can be automounted on Linux and Android with SSHFS.
 * Unifi AP controller for managing my Unifi access point (with more coming)
 * wiki.js for documentation (being transferred from gollum)
 
@@ -18,8 +19,7 @@ As of now, SHODAN runs 3 services and 1 gameserver.
 ### Services waiting to be implemented:
  * Emby - It has taken me 2 years to get around to implementing a media server on my home network...
  * Transmission with OpenVPN buddy container - Should be an obvious companion to emby.
- * automated offsite backup container - Still need to set up offsite backups...
- * OpenSSH - My latest plan for a self hosted "cloud drive" involves a hardened sshfs that my laptop automatically mounts to.
+ * Automated offsite backup container - Still need to set up offsite backups...
 
 ## etc
 Note: The plaintext passwords within the Samba config are an unfortunate limitation of dperson's Samba container, but since that service (and most others) are only accessible on the wired network or through VPN, they don't pose a major security hole. As long as my roommate doesn't get any ideas.

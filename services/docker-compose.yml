@@ -17,6 +17,16 @@ services:
       - /etc/localtime:/etc/localtime:ro
     network_mode: "host"
 
+  sftp:
+    image: atmoz/sftp
+    ports: "22"
+    volumes:
+        - /services/sftp/ssh_host_ed25519_key:/etc/ssh/ssh_host_ed25519_key
+        - /services/sftp/ssh_host_rsa_key:/etc/ssh/ssh_host_rsa_key
+        - /services/sftp/id_lappy.pub:/home/files/.ssh/keys/id_lappy.pub:ro
+        #- /services/sftp/id_phone.pub:/home/files/.ssh/keys/id_phone.pub:ro
+    command: files::100
+
   unifi:
     image: goofball222/unifi
     network_mode: "host"
