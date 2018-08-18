@@ -67,11 +67,3 @@ services:
     volumes:
       - /services/wiki/config.yml:/var/wiki/config.yml
       - /services/wiki/id_rsa:/var/wiki/id_rsa
-
-  borgbackup:
-    image: nold360/borgserver
-    volumes:
-      - /services/borg/sshkeys:/sshkeys:ro
-      - /mnt/storage/borgbackup:/backup
-    ports:
-      - "2223:22"
